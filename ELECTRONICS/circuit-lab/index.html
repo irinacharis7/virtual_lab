@@ -1,0 +1,567 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EDUVATE | Circuit Lab</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- ================= BACKGROUND ================= -->
+
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            edu<span>vate</span>
+        </a>
+
+        <div class="lab-title">
+            🧪 Virtual Circuit Lab
+        </div>
+
+        <div class="nav-right">
+
+            <div class="score-box">
+                ⭐ <span id="score">0</span>
+            </div>
+
+            <div class="attempt-box">
+                Attempts:
+                <span id="attempts">0</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="lab-container">
+
+
+        <!-- ================= LEFT PANEL ================= -->
+
+        <aside class="components-panel">
+
+            <div class="panel-heading">
+
+                <span class="small-label">
+                    COMPONENTS
+                </span>
+
+                <h2>
+                    Circuit Parts
+                </h2>
+
+                <p>
+                    Drag a component onto the
+                    breadboard.
+                </p>
+
+            </div>
+
+
+            <!-- BATTERY -->
+
+            <div
+                class="component"
+                draggable="true"
+                data-component="battery"
+            >
+
+                <div class="component-icon battery-icon">
+                    🔋
+                </div>
+
+                <div>
+
+                    <strong>
+                        Battery
+                    </strong>
+
+                    <small>
+                        Power source
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESISTOR -->
+
+            <div
+                class="component"
+                draggable="true"
+                data-component="resistor"
+            >
+
+                <div class="component-icon resistor-icon">
+                    ▬
+                </div>
+
+                <div>
+
+                    <strong>
+                        Resistor
+                    </strong>
+
+                    <small>
+                        Limits current
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- LED -->
+
+            <div
+                class="component"
+                draggable="true"
+                data-component="led"
+            >
+
+                <div class="component-icon led-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <strong>
+                        LED
+                    </strong>
+
+                    <small>
+                        Emits light
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- GROUND -->
+
+            <div
+                class="component"
+                draggable="true"
+                data-component="ground"
+            >
+
+                <div class="component-icon ground-icon">
+                    ⏚
+                </div>
+
+                <div>
+
+                    <strong>
+                        Ground
+                    </strong>
+
+                    <small>
+                        Circuit return
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- INSTRUCTIONS -->
+
+            <div class="drag-info">
+
+                <div class="info-icon">
+                    👆
+                </div>
+
+                <p>
+                    <strong>
+                        How to use
+                    </strong>
+
+                    Drag components onto the
+                    board, then connect their
+                    terminals with wires.
+                </p>
+
+            </div>
+
+        </aside>
+
+
+
+        <!-- ================= WORKSPACE ================= -->
+
+        <section class="workspace">
+
+
+            <div class="workspace-header">
+
+                <div>
+
+                    <span class="small-label">
+                        EXPERIMENT 01
+                    </span>
+
+                    <h1>
+                        Light Up the LED
+                    </h1>
+
+                </div>
+
+
+                <button
+                    id="resetButton"
+                    class="reset-button"
+                >
+                    ↻ Reset
+                </button>
+
+            </div>
+
+
+            <!-- BREADBOARD -->
+
+            <div
+                id="breadboard"
+                class="breadboard"
+            >
+
+                <div class="board-label">
+                    BREADBOARD
+                </div>
+
+
+                <!-- BOARD RAILS -->
+
+                <div class="power-rail positive">
+                    +
+                </div>
+
+                <div class="power-rail negative">
+                    −
+                </div>
+
+
+                <!-- DROP MESSAGE -->
+
+                <div
+                    id="dropMessage"
+                    class="drop-message"
+                >
+
+                    <div>
+                        🧩
+                    </div>
+
+                    <strong>
+                        Drop components here
+                    </strong>
+
+                    <span>
+                        Build the circuit to
+                        light the LED
+                    </span>
+
+                </div>
+
+
+                <!-- CONNECTION SVG -->
+
+                <svg
+                    id="wireLayer"
+                    class="wire-layer"
+                >
+                </svg>
+
+            </div>
+
+
+            <!-- CONNECTION AREA -->
+
+            <div class="connection-help">
+
+                <div class="connection-icon">
+                    🔌
+                </div>
+
+                <div>
+
+                    <strong>
+                        Connect the circuit
+                    </strong>
+
+                    <p>
+                        Click and drag from one
+                        terminal to another to
+                        create a wire.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="workspace-actions">
+
+                <button
+                    id="hintButton"
+                    class="hint-button"
+                >
+                    💡 Show Hint
+                </button>
+
+
+                <button
+                    id="checkButton"
+                    class="check-button"
+                >
+                    ✓ Check Circuit
+                </button>
+
+            </div>
+
+
+            <!-- FEEDBACK -->
+
+            <div
+                id="feedback"
+                class="feedback"
+            >
+
+                <span id="feedbackIcon">
+                    💡
+                </span>
+
+                <div>
+
+                    <strong id="feedbackTitle">
+                        Ready to experiment?
+                    </strong>
+
+                    <p id="feedbackText">
+                        Build the circuit and
+                        check your answer.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CHALLENGE PANEL ================= -->
+
+        <aside class="challenge-panel">
+
+
+            <div class="challenge-card">
+
+                <span class="small-label">
+                    CURRENT CHALLENGE
+                </span>
+
+                <div class="challenge-number">
+                    01
+                </div>
+
+
+                <h2>
+                    Make the LED glow 💡
+                </h2>
+
+
+                <p>
+                    Create a complete electrical
+                    circuit using the battery,
+                    resistor, LED and ground.
+                </p>
+
+
+                <div class="objective">
+
+                    <span>
+                        🎯 Objective
+                    </span>
+
+                    <strong>
+                        Complete the circuit
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- HINT -->
+
+            <div
+                id="hintBox"
+                class="hint-box"
+            >
+
+                <div class="hint-header">
+
+                    <span>
+                        💡 HINT
+                    </span>
+
+                    <button
+                        id="closeHint"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <p>
+                    The resistor should be placed
+                    between the battery and LED.
+                    The LED must eventually connect
+                    back to ground.
+                </p>
+
+            </div>
+
+
+            <!-- REQUIRED -->
+
+            <div class="required-card">
+
+                <span class="small-label">
+                    REQUIRED
+                </span>
+
+                <div class="required-item">
+                    <span>🔋</span>
+                    Battery
+                    <span class="required-check">○</span>
+                </div>
+
+                <div class="required-item">
+                    <span>▬</span>
+                    Resistor
+                    <span class="required-check">○</span>
+                </div>
+
+                <div class="required-item">
+                    <span>💡</span>
+                    LED
+                    <span class="required-check">○</span>
+                </div>
+
+                <div class="required-item">
+                    <span>⏚</span>
+                    Ground
+                    <span class="required-check">○</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+    </main>
+
+
+
+    <!-- ================= SUCCESS POPUP ================= -->
+
+    <div
+        id="successOverlay"
+        class="success-overlay"
+    >
+
+        <div class="success-box">
+
+            <div class="success-icon">
+                🎉
+            </div>
+
+            <span class="small-label">
+                EXPERIMENT COMPLETE
+            </span>
+
+            <h2>
+                Circuit Complete!
+            </h2>
+
+            <p>
+                Excellent work! You correctly
+                connected the components and
+                created a working LED circuit.
+            </p>
+
+
+            <div class="success-stats">
+
+                <div>
+                    <strong id="finalScore">
+                        0
+                    </strong>
+
+                    <small>
+                        Score
+                    </small>
+                </div>
+
+                <div>
+                    <strong id="finalAttempts">
+                        0
+                    </strong>
+
+                    <small>
+                        Attempts
+                    </small>
+                </div>
+
+            </div>
+
+
+            <button
+                id="continueButton"
+                class="continue-button"
+            >
+                Continue Learning →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

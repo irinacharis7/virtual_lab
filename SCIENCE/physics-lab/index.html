@@ -1,0 +1,399 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EDUVATE | Virtual Physics Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Background decorations -->
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            edu<span>vate</span>
+        </div>
+
+        <div class="nav-right">
+
+            <span class="lab-label">
+                ⚡ VIRTUAL PHYSICS LAB
+            </span>
+
+            <a href="../../index.html" class="back-button">
+                ← Back to EDUVATE
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main page -->
+    <main class="page">
+
+
+        <!-- LEFT SECTION -->
+
+        <section class="intro">
+
+            <span class="welcome-badge">
+                ⚡ INTERACTIVE EXPERIMENT
+            </span>
+
+
+            <h1>
+                Learn physics
+                <span>by doing.</span>
+            </h1>
+
+
+            <p class="description">
+
+                Welcome to the EDUVATE Virtual Physics Lab.
+                Experiment with voltage and resistance,
+                observe the current, and understand
+                Ohm's Law through hands-on learning.
+
+            </p>
+
+
+            <!-- Learning points -->
+
+            <div class="learning-points">
+
+
+                <div class="learning-point">
+
+                    <div class="point-icon">
+                        ⚡
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Experiment Freely
+                        </strong>
+
+                        <small>
+                            Change voltage and resistance values.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="learning-point">
+
+                    <div class="point-icon">
+                        🧠
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Understand the Concept
+                        </strong>
+
+                        <small>
+                            See how voltage and resistance affect current.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="learning-point">
+
+                    <div class="point-icon">
+                        🎯
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Test Your Knowledge
+                        </strong>
+
+                        <small>
+                            Run experiments and analyze the result.
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RIGHT SECTION -->
+
+        <section class="lab-section">
+
+            <div class="lab-card">
+
+
+                <!-- Lab header -->
+
+                <div class="lab-header">
+
+                    <div class="experiment-icon">
+                        ⚡
+                    </div>
+
+
+                    <div>
+
+                        <span class="experiment-tag">
+                            EXPERIMENT 01
+                        </span>
+
+                        <h2>
+                            Ohm's Law
+                        </h2>
+
+                        <p>
+                            Explore the relationship between
+                            voltage, current and resistance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Formula -->
+
+                <div class="formula-box">
+
+                    <span>
+                        OHM'S LAW
+                    </span>
+
+                    <strong>
+                        V = I × R
+                    </strong>
+
+                    <small>
+                        Current = Voltage ÷ Resistance
+                    </small>
+
+                </div>
+
+
+
+                <!-- Inputs -->
+
+                <div class="controls">
+
+
+                    <div class="form-group">
+
+                        <label for="voltage">
+                            Voltage
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="number"
+                                id="voltage"
+                                value="5"
+                                min="0"
+                                step="0.1"
+                            >
+
+                            <span>
+                                V
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+
+                        <label for="resistance">
+                            Resistance
+                        </label>
+
+                        <div class="input-box">
+
+                            <input
+                                type="number"
+                                id="resistance"
+                                value="10"
+                                min="0.1"
+                                step="0.1"
+                            >
+
+                            <span>
+                                Ω
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- Circuit -->
+
+                <div class="circuit-area">
+
+                    <span class="circuit-label">
+                        CIRCUIT
+                    </span>
+
+
+                    <div class="circuit">
+
+
+                        <div class="component battery">
+                            🔋
+                        </div>
+
+
+                        <div class="wire"></div>
+
+
+                        <div class="component resistor">
+                            Ω
+                        </div>
+
+
+                        <div class="wire"></div>
+
+
+                        <div class="component bulb">
+                            💡
+                        </div>
+
+
+                    </div>
+
+
+                    <p>
+                        Battery → Resistor → Load
+                    </p>
+
+                </div>
+
+
+
+                <!-- Run button -->
+
+                <button
+                    onclick="runExperiment()"
+                    class="run-button"
+                >
+
+                    <span>
+                        Run Experiment
+                    </span>
+
+                    <span class="arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+
+                <!-- Result -->
+
+                <div
+                    class="result"
+                    id="resultBox"
+                >
+
+                    <div class="result-icon">
+                        ⚡
+                    </div>
+
+
+                    <div class="result-content">
+
+                        <span>
+                            EXPERIMENT RESULT
+                        </span>
+
+
+                        <h3>
+
+                            Current:
+
+                            <strong id="current">
+                                0.00
+                            </strong>
+
+                            A
+
+                        </h3>
+
+
+                        <p id="resultMessage">
+                            Enter your values and run the experiment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <span>
+            EDUVATE
+        </span>
+
+        <p>
+            Learn • Experiment • Grow 🚀
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

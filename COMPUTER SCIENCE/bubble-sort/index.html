@@ -1,0 +1,496 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EDUVATE | Bubble Sort Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            edu<span>vate</span>
+        </a>
+
+        <div class="lab-title">
+
+            <span>VIRTUAL LAB</span>
+
+            <strong>Data Structures</strong>
+
+        </div>
+
+        <a
+            href="../index.html"
+            class="back-button"
+        >
+            ← Back to Labs
+        </a>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- BREADCRUMB -->
+
+        <div class="breadcrumb">
+
+            Virtual Lab
+            <span>›</span>
+            Data Structures
+            <span>›</span>
+
+            <strong>
+                Bubble Sort
+            </strong>
+
+        </div>
+
+
+
+        <!-- HEADING -->
+
+        <section class="experiment-heading">
+
+            <div>
+
+                <span class="section-label">
+                    EXPERIMENT 03
+                </span>
+
+                <h1>
+                    Bubble Sort
+                </h1>
+
+                <p>
+                    Watch how Bubble Sort repeatedly
+                    compares neighbouring elements
+                    and swaps them into the correct order.
+                </p>
+
+            </div>
+
+
+            <div class="difficulty">
+
+                <span>
+                    DIFFICULTY
+                </span>
+
+                <strong>
+                    Beginner
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LAB -->
+
+        <section class="lab-layout">
+
+
+            <!-- CONTROLS -->
+
+            <div class="control-card">
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        ⚙️
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Experiment Setup
+                        </h2>
+
+                        <p>
+                            Configure your array
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ARRAY -->
+
+                <div class="input-group">
+
+                    <label for="arrayInput">
+                        Array Elements
+                    </label>
+
+                    <input
+                        type="text"
+                        id="arrayInput"
+                        value="8, 3, 5, 1, 7, 2"
+                        placeholder="8, 3, 5, 1, 7"
+                    >
+
+                    <small>
+                        Separate numbers using commas
+                    </small>
+
+                </div>
+
+
+
+                <!-- SPEED -->
+
+                <div class="input-group">
+
+                    <div class="label-row">
+
+                        <label>
+                            Animation Speed
+                        </label>
+
+                        <span id="speedValue">
+                            Normal
+                        </span>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="speedSlider"
+                        min="1"
+                        max="3"
+                        value="2"
+                    >
+
+                </div>
+
+
+
+                <!-- BUTTONS -->
+
+                <div class="control-buttons">
+
+                    <button
+                        id="startButton"
+                        class="primary-button"
+                    >
+                        ▶ Start Sorting
+                    </button>
+
+                    <button
+                        id="resetButton"
+                        class="secondary-button"
+                    >
+                        ↻ Reset
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- VISUALIZATION -->
+
+            <div class="visual-card">
+
+                <div class="visual-header">
+
+                    <div>
+
+                        <span>
+                            LIVE VISUALIZATION
+                        </span>
+
+                        <h2>
+                            Sorting the array
+                        </h2>
+
+                    </div>
+
+                    <div
+                        class="step-counter"
+                        id="stepCounter"
+                    >
+                        Ready
+                    </div>
+
+                </div>
+
+
+
+                <!-- ARRAY -->
+
+                <div
+                    class="visual-array"
+                    id="visualArray"
+                >
+                </div>
+
+
+
+                <!-- POINTER -->
+
+                <div
+                    class="pointer-area"
+                    id="pointerArea"
+                >
+                </div>
+
+
+
+                <!-- EXPLANATION -->
+
+                <div
+                    class="explanation"
+                    id="explanation"
+                >
+
+                    <div class="explanation-icon">
+                        💡
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Ready to sort
+                        </strong>
+
+                        <p>
+                            Press "Start Sorting" to
+                            begin the experiment.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RESULT -->
+
+                <div class="result-box">
+
+                    <div>
+
+                        <span>
+                            STATUS
+                        </span>
+
+                        <strong id="resultText">
+                            Not started
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            COMPARISONS
+                        </span>
+
+                        <strong id="comparisonText">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CONCEPT -->
+
+        <section class="concept-section">
+
+            <div class="concept-heading">
+
+                <span class="section-label">
+                    UNDERSTAND THE CONCEPT
+                </span>
+
+                <h2>
+                    How does
+                    <span>Bubble Sort</span>
+                    work?
+                </h2>
+
+            </div>
+
+
+
+            <div class="concept-grid">
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Compare neighbours
+                    </h3>
+
+                    <p>
+                        Compare two adjacent elements
+                        in the array.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Swap if needed
+                    </h3>
+
+                    <p>
+                        If the first element is larger,
+                        swap the two elements.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Repeat
+                    </h3>
+
+                    <p>
+                        Continue comparing neighbouring
+                        elements throughout the array.
+                    </p>
+
+                </div>
+
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Largest moves right
+                    </h3>
+
+                    <p>
+                        After every pass, the largest
+                        unsorted element reaches the end.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- COMPLEXITY -->
+
+        <section class="complexity-section">
+
+            <div class="complexity-card">
+
+                <span class="section-label">
+                    ALGORITHM INSIGHT
+                </span>
+
+                <h2>
+                    Bubble Sort Complexity
+                </h2>
+
+                <div class="complexity-grid">
+
+                    <div>
+
+                        <span>
+                            BEST CASE
+                        </span>
+
+                        <strong>
+                            O(n)
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            AVERAGE
+                        </span>
+
+                        <strong>
+                            O(n²)
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            WORST CASE
+                        </span>
+
+                        <strong>
+                            O(n²)
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

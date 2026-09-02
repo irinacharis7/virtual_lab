@@ -1,0 +1,381 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EDUVATE | Virtual Biology Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+
+    <!-- NAVBAR -->
+
+    <header class="lab-navbar">
+
+        <div class="logo">
+            edu<span>vate</span>
+        </div>
+
+        <div class="nav-right">
+
+            <span class="lab-label">
+                🧪 VIRTUAL LAB
+            </span>
+
+            <a href="../../index.html" class="back-button">
+                ← Back to EDUVATE
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="lab-page">
+
+
+        <!-- HEADER -->
+
+        <section class="lab-header">
+
+            <span class="lab-badge">
+                🧬 BIOLOGY • BEGINNER
+            </span>
+
+            <h1>
+                Plant Cell
+                <span>Labeling Lab</span>
+            </h1>
+
+            <p>
+                Drag each label and drop it onto the
+                correct part of the plant cell.
+            </p>
+
+        </section>
+
+
+        <!-- INSTRUCTIONS -->
+
+        <div class="instruction">
+
+            💡
+            <strong>How to play:</strong>
+
+            Drag a label from the right side and
+            drop it onto the matching cell structure.
+
+        </div>
+
+
+        <!-- LAB -->
+
+        <section class="lab-layout">
+
+
+            <!-- CELL -->
+
+            <div class="cell-card">
+
+                <div class="card-title">
+
+                    <div>
+
+                        <span>
+                            EXPERIMENT 01
+                        </span>
+
+                        <h2>
+                            🔬 Label the Plant Cell
+                        </h2>
+
+                    </div>
+
+                    <div class="score">
+
+                        Score:
+                        <strong id="score">
+                            0
+                        </strong>
+                        / 3
+
+                    </div>
+
+                </div>
+
+
+                <div class="cell-area">
+
+
+                    <div class="cell">
+
+                        <div class="cell-wall">
+
+
+                            <!-- NUCLEUS -->
+
+                            <div
+                                class="cell-part nucleus"
+                                data-part="nucleus">
+
+                                <span class="structure-dot"></span>
+
+                            </div>
+
+
+                            <!-- VACUOLE -->
+
+                            <div
+                                class="cell-part vacuole"
+                                data-part="vacuole">
+
+                                <span class="structure-dot"></span>
+
+                            </div>
+
+
+                            <!-- CHLOROPLASTS -->
+
+                            <div
+                                class="cell-part chloroplast c1"
+                                data-part="chloroplast">
+
+                            </div>
+
+                            <div
+                                class="cell-part chloroplast c2"
+                                data-part="chloroplast">
+
+                            </div>
+
+                            <div
+                                class="cell-part chloroplast c3"
+                                data-part="chloroplast">
+
+                            </div>
+
+
+                            <!-- CYTOPLASM -->
+
+                            <div class="cytoplasm"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="feedback"
+                    id="feedback">
+
+                    Drag the labels to the correct
+                    cell structures.
+
+                </div>
+
+
+                <button
+                    class="check-button"
+                    onclick="checkCompletion()">
+
+                    ✓ Check Answer
+
+                </button>
+
+            </div>
+
+
+            <!-- LABELS -->
+
+            <aside class="labels-card">
+
+                <div class="labels-header">
+
+                    <div class="label-icon">
+                        🏷️
+                    </div>
+
+                    <div>
+
+                        <span>
+                            DRAG & DROP
+                        </span>
+
+                        <h2>
+                            Cell Parts
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <p class="labels-description">
+
+                    Drag each label onto the
+                    corresponding structure.
+
+                </p>
+
+
+                <div class="labels-container">
+
+
+                    <div
+                        class="drag-label nucleus-label"
+                        draggable="true"
+                        data-label="nucleus">
+
+                        🟣
+                        <strong>Nucleus</strong>
+
+                    </div>
+
+
+                    <div
+                        class="drag-label vacuole-label"
+                        draggable="true"
+                        data-label="vacuole">
+
+                        🔵
+                        <strong>Vacuole</strong>
+
+                    </div>
+
+
+                    <div
+                        class="drag-label chloroplast-label"
+                        draggable="true"
+                        data-label="chloroplast">
+
+                        🟢
+                        <strong>Chloroplast</strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="lab-tip">
+
+                    💡
+
+                    <div>
+
+                        <strong>
+                            Lab Tip
+                        </strong>
+
+                        <p>
+                            Look at the colour and
+                            position of each structure
+                            carefully.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </aside>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <section class="progress-card">
+
+            <div>
+
+                <span>
+                    YOUR LAB PROGRESS
+                </span>
+
+                <strong>
+                    Experiment 01 of 05
+                </strong>
+
+            </div>
+
+
+            <div class="progress-track">
+
+                <div
+                    class="progress-fill"
+                    id="progressFill">
+
+                </div>
+
+            </div>
+
+
+            <div class="xp">
+
+                +100 XP
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- SUCCESS -->
+
+    <div
+        class="success-overlay"
+        id="successOverlay">
+
+        <div class="success-box">
+
+            <div class="success-icon">
+                🎉
+            </div>
+
+            <span>
+                EXPERIMENT COMPLETE
+            </span>
+
+            <h2>
+                Excellent Work!
+            </h2>
+
+            <p>
+                You correctly identified all the
+                major plant cell structures.
+            </p>
+
+            <div class="earned-xp">
+                +100 XP
+            </div>
+
+            <button onclick="closeSuccess()">
+
+                Continue Learning →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,853 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f7f5ff;
+
+    color: #171438;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   BACKGROUND BLOBS
+========================= */
+
+.blob {
+    position: fixed;
+
+    border-radius: 50%;
+
+    filter: blur(80px);
+
+    opacity: 0.35;
+
+    z-index: -1;
+
+    pointer-events: none;
+}
+
+
+.blob-one {
+    width: 300px;
+    height: 300px;
+
+    background: #c9b8ff;
+
+    top: -100px;
+    left: -100px;
+}
+
+
+.blob-two {
+    width: 350px;
+    height: 350px;
+
+    background: #b8e7f5;
+
+    bottom: -150px;
+    right: -100px;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+
+    padding: 25px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-bottom: 1px solid #e7e2f5;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.logo {
+    font-size: 34px;
+
+    font-weight: 800;
+
+    letter-spacing: -2px;
+
+    color: #5d3fd3;
+}
+
+
+.logo span {
+    color: #9a7be8;
+}
+
+
+.nav-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+.lab-label {
+    padding: 8px 13px;
+
+    background: #ece6ff;
+
+    color: #6542d4;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.back-button {
+    text-decoration: none;
+
+    color: #6844d8;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    transition: 0.2s;
+}
+
+
+.back-button:hover {
+    transform: translateX(-3px);
+}
+
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.page {
+    max-width: 1250px;
+
+    min-height: calc(100vh - 150px);
+
+    margin: auto;
+
+    padding: 70px 30px;
+
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    padding: 20px;
+}
+
+
+.welcome-badge {
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    background: #ece6ff;
+
+    color: #6542d4;
+
+    border-radius: 30px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+.intro h1 {
+    font-size: clamp(42px, 5vw, 65px);
+
+    line-height: 1.05;
+
+    margin-top: 25px;
+
+    letter-spacing: -3px;
+}
+
+
+.intro h1 span {
+    display: block;
+
+    color: #6844d8;
+}
+
+
+.description {
+    color: #6f6c7d;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin-top: 25px;
+
+    max-width: 500px;
+}
+
+
+/* =========================
+   LEARNING POINTS
+========================= */
+
+.learning-points {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    margin-top: 40px;
+}
+
+
+.learning-point {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.point-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    border-radius: 13px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 20px;
+
+    box-shadow:
+        0 6px 20px rgba(50, 35, 100, 0.08);
+}
+
+
+.learning-point strong {
+    display: block;
+
+    font-size: 14px;
+}
+
+
+.learning-point small {
+    display: block;
+
+    color: #888;
+
+    margin-top: 4px;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   LAB SECTION
+========================= */
+
+.lab-section {
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.lab-card {
+    width: 100%;
+
+    max-width: 560px;
+
+    background: white;
+
+    border: 1px solid #e7e2f5;
+
+    border-radius: 25px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 20px 60px rgba(55, 35, 120, 0.10);
+}
+
+
+/* =========================
+   LAB HEADER
+========================= */
+
+.lab-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.experiment-icon {
+    width: 58px;
+    height: 58px;
+
+    flex-shrink: 0;
+
+    border-radius: 16px;
+
+    background: #eee8ff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 27px;
+}
+
+
+.experiment-tag {
+    color: #6844d8;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.lab-header h2 {
+    font-size: 25px;
+
+    margin-top: 4px;
+}
+
+
+.lab-header p {
+    color: #888;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   FORMULA
+========================= */
+
+.formula-box {
+    background: #f7f5ff;
+
+    border: 1px solid #e7e0fa;
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+}
+
+
+.formula-box span {
+    display: block;
+
+    color: #6844d8;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.formula-box strong {
+    display: block;
+
+    font-size: 27px;
+
+    color: #3f2b91;
+
+    margin-top: 6px;
+}
+
+
+.formula-box small {
+    display: block;
+
+    color: #888;
+
+    margin-top: 5px;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.form-group label {
+    display: block;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+.input-box {
+    position: relative;
+}
+
+
+.input-box input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 45px 0 14px;
+
+    border: 1px solid #ddd9e8;
+
+    border-radius: 11px;
+
+    background: #faf9fd;
+
+    color: #25213e;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+
+.input-box input:focus {
+    outline: none;
+
+    border-color: #7351db;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 4px #eee9ff;
+}
+
+
+.input-box span {
+    position: absolute;
+
+    right: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #888;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   CIRCUIT
+========================= */
+
+.circuit-area {
+    padding: 20px;
+
+    background: #faf9fd;
+
+    border: 1px solid #eeeaf6;
+
+    border-radius: 17px;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+}
+
+
+.circuit-label {
+    color: #6844d8;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.circuit {
+    margin: 20px auto 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0;
+}
+
+
+.component {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: white;
+
+    border: 1px solid #e3dff0;
+
+    font-size: 25px;
+
+    box-shadow:
+        0 5px 15px rgba(55, 35, 120, 0.07);
+}
+
+
+.resistor {
+    color: #6844d8;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+
+.wire {
+    width: 55px;
+
+    height: 3px;
+
+    background: #6844d8;
+}
+
+
+.circuit-area p {
+    color: #999;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   RUN BUTTON
+========================= */
+
+.run-button {
+    width: 100%;
+
+    height: 53px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    background: #6844d8;
+
+    color: white;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    transition: 0.25s;
+}
+
+
+.run-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(104, 68, 216, 0.25);
+}
+
+
+.run-button:active {
+    transform: translateY(0);
+}
+
+
+.arrow {
+    font-size: 20px;
+
+    transition: 0.2s;
+}
+
+
+.run-button:hover .arrow {
+    transform: translateX(5px);
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: #f3efff;
+
+    border: 1px solid #e2d9fa;
+
+    transition: 0.3s;
+}
+
+
+.result.active {
+    transform: scale(1.01);
+}
+
+
+.result-icon {
+    width: 45px;
+    height: 45px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: white;
+
+    font-size: 20px;
+}
+
+
+.result-content span {
+    display: block;
+
+    color: #6844d8;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+
+.result-content h3 {
+    margin-top: 4px;
+
+    font-size: 15px;
+}
+
+
+.result-content h3 strong {
+    color: #6844d8;
+
+    font-size: 20px;
+}
+
+
+.result-content p {
+    color: #888;
+
+    font-size: 10px;
+
+    margin-top: 3px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+
+    padding: 20px;
+
+    border-top: 1px solid #e7e2f5;
+
+    background: rgba(255, 255, 255, 0.5);
+}
+
+
+footer span {
+    color: #6844d8;
+
+    font-weight: 800;
+
+    font-size: 12px;
+}
+
+
+footer p {
+    color: #999;
+
+    font-size: 10px;
+
+    margin-top: 4px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .page {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 50px 20px;
+    }
+
+    .intro {
+        padding: 10px;
+    }
+
+    .intro h1 {
+        font-size: 48px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .lab-label {
+        display: none;
+    }
+
+    .back-button {
+        font-size: 10px;
+    }
+
+    .controls {
+        grid-template-columns: 1fr;
+    }
+
+    .lab-card {
+        padding: 23px 20px;
+    }
+
+    .intro h1 {
+        font-size: 42px;
+    }
+
+    .circuit {
+        transform: scale(0.85);
+    }
+
+}

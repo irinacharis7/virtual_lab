@@ -1,0 +1,586 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>EDUVATE | Linear Search Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Background -->
+
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            edu<span>vate</span>
+        </a>
+
+
+        <div class="lab-title">
+
+            <span>
+                VIRTUAL LAB
+            </span>
+
+            <strong>
+                Data Structures
+            </strong>
+
+        </div>
+
+
+        <a
+            href="../index.html"
+            class="back-button"
+        >
+            ← Back to Labs
+        </a>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- Breadcrumb -->
+
+        <div class="breadcrumb">
+
+            Virtual Lab
+
+            <span>›</span>
+
+            Data Structures
+
+            <span>›</span>
+
+            <strong>
+                Linear Search
+            </strong>
+
+        </div>
+
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="experiment-heading">
+
+            <div>
+
+                <span class="section-label">
+                    EXPERIMENT 01
+                </span>
+
+
+                <h1>
+                    Linear Search
+                </h1>
+
+
+                <p>
+
+                    Discover how a linear search finds
+                    an element by checking each item
+                    one at a time.
+
+                </p>
+
+            </div>
+
+
+            <div class="difficulty">
+
+                <span>
+                    DIFFICULTY
+                </span>
+
+                <strong>
+                    Beginner
+                </strong>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LAB AREA ================= -->
+
+        <section class="lab-layout">
+
+
+            <!-- LEFT: CONTROLS -->
+
+            <div class="control-card">
+
+
+                <div class="card-heading">
+
+                    <div class="heading-icon">
+                        ⚙️
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Experiment Setup
+                        </h2>
+
+                        <p>
+                            Configure your experiment
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Array -->
+
+                <div class="input-group">
+
+                    <label for="arrayInput">
+                        Array Elements
+                    </label>
+
+                    <input
+                        type="text"
+                        id="arrayInput"
+                        value="12, 5, 8, 21, 7, 15"
+                        placeholder="Example: 4, 8, 2, 9"
+                    >
+
+                    <small>
+                        Separate numbers using commas
+                    </small>
+
+                </div>
+
+
+
+                <!-- Target -->
+
+                <div class="input-group">
+
+                    <label for="targetInput">
+                        Search For
+                    </label>
+
+                    <input
+                        type="number"
+                        id="targetInput"
+                        value="21"
+                        placeholder="Enter target value"
+                    >
+
+                </div>
+
+
+
+                <!-- Speed -->
+
+                <div class="input-group">
+
+                    <div class="label-row">
+
+                        <label>
+                            Animation Speed
+                        </label>
+
+                        <span id="speedValue">
+                            Normal
+                        </span>
+
+                    </div>
+
+
+                    <input
+                        type="range"
+                        id="speedSlider"
+                        min="1"
+                        max="3"
+                        value="2"
+                    >
+
+                </div>
+
+
+
+                <!-- Buttons -->
+
+                <div class="control-buttons">
+
+                    <button
+                        id="startButton"
+                        class="primary-button"
+                    >
+                        ▶ Start Experiment
+                    </button>
+
+
+                    <button
+                        id="resetButton"
+                        class="secondary-button"
+                    >
+                        ↻ Reset
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT: VISUALIZATION -->
+
+            <div class="visual-card">
+
+
+                <div class="visual-header">
+
+                    <div>
+
+                        <span>
+                            LIVE VISUALIZATION
+                        </span>
+
+                        <h2>
+                            Searching through the array
+                        </h2>
+
+                    </div>
+
+
+                    <div
+                        class="step-counter"
+                        id="stepCounter"
+                    >
+                        Ready
+                    </div>
+
+                </div>
+
+
+
+                <!-- Array -->
+
+                <div
+                    class="visual-array"
+                    id="visualArray"
+                >
+
+                    <!-- Generated by JavaScript -->
+
+                </div>
+
+
+
+                <!-- Pointer -->
+
+                <div
+                    class="pointer-area"
+                    id="pointerArea"
+                >
+
+                </div>
+
+
+
+                <!-- Explanation -->
+
+                <div
+                    class="explanation"
+                    id="explanation"
+                >
+
+                    <div class="explanation-icon">
+                        💡
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Ready to search
+                        </strong>
+
+                        <p>
+                            Press "Start Experiment" to
+                            begin the linear search.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Result -->
+
+                <div
+                    class="result-box"
+                    id="resultBox"
+                >
+
+                    <div>
+                        <span>
+                            RESULT
+                        </span>
+
+                        <strong id="resultText">
+                            —
+                        </strong>
+                    </div>
+
+
+                    <div>
+                        <span>
+                            COMPARISONS
+                        </span>
+
+                        <strong id="comparisonText">
+                            0
+                        </strong>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= CONCEPT ================= -->
+
+        <section class="concept-section">
+
+
+            <div class="concept-heading">
+
+                <span class="section-label">
+                    UNDERSTAND THE CONCEPT
+                </span>
+
+                <h2>
+                    How does
+                    <span>Linear Search</span>
+                    work?
+                </h2>
+
+            </div>
+
+
+
+            <div class="concept-grid">
+
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Start at the beginning
+                    </h3>
+
+                    <p>
+
+                        The algorithm starts checking
+                        from the first element of the array.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Compare
+                    </h3>
+
+                    <p>
+
+                        Each element is compared with
+                        the target value.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Move forward
+                    </h3>
+
+                    <p>
+
+                        If the element does not match,
+                        the algorithm moves to the next one.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="concept-card">
+
+                    <div class="concept-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Find or finish
+                    </h3>
+
+                    <p>
+
+                        The search stops when the element
+                        is found or the array ends.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================= CHALLENGE ================= -->
+
+        <section class="challenge-section">
+
+
+            <div class="challenge-card">
+
+
+                <span class="section-label">
+                    🧠 QUICK CHALLENGE
+                </span>
+
+
+                <h2>
+                    Test what you learned
+                </h2>
+
+
+                <p id="question">
+                    What is the worst-case time
+                    complexity of Linear Search?
+                </p>
+
+
+                <div class="answers">
+
+
+                    <button
+                        onclick="checkAnswer(this, 'O(1)')"
+                    >
+                        O(1)
+                    </button>
+
+
+                    <button
+                        onclick="checkAnswer(this, 'O(log n)')"
+                    >
+                        O(log n)
+                    </button>
+
+
+                    <button
+                        onclick="checkAnswer(this, 'O(n)')"
+                    >
+                        O(n)
+                    </button>
+
+
+                    <button
+                        onclick="checkAnswer(this, 'O(n²)')"
+                    >
+                        O(n²)
+                    </button>
+
+
+                </div>
+
+
+                <p
+                    class="quiz-result"
+                    id="quizResult"
+                ></p>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- Toast -->
+
+    <div
+        class="toast"
+        id="toast"
+    >
+        <span>✨</span>
+
+        <p></p>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
+```

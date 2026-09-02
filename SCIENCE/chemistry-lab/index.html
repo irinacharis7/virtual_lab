@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Virtual Chemistry Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧪 Virtual Chemistry Lab</h1>
+    <h2>Acid-Base Neutralization</h2>
+
+    <p>Experiment: Mix Hydrochloric Acid (HCl) with Sodium Hydroxide (NaOH)</p>
+
+    <div class="controls">
+
+        <label>HCl Volume (mL)</label>
+        <input type="number" id="acid" value="50">
+
+        <label>NaOH Volume (mL)</label>
+        <input type="number" id="base" value="50">
+
+        <button onclick="mixChemicals()">Mix Chemicals</button>
+
+    </div>
+
+    <div class="beakers">
+        <div class="beaker">
+            <h3>HCl</h3>
+            <div class="liquid acid-liquid"></div>
+        </div>
+
+        <div class="plus">+</div>
+
+        <div class="beaker">
+            <h3>NaOH</h3>
+            <div class="liquid base-liquid"></div>
+        </div>
+
+        <div class="arrow">→</div>
+
+        <div class="beaker">
+            <h3>Result</h3>
+            <div id="resultLiquid" class="liquid result-liquid"></div>
+        </div>
+    </div>
+
+    <div class="result">
+
+        <h3>Experiment Result</h3>
+
+        <p>pH: <span id="ph">-</span></p>
+
+        <p id="message">Run the experiment to see the result.</p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EDUVATE | Virtual Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="blob blob-one"></div>
+    <div class="blob blob-two"></div>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <a href="../index.html" class="logo">
+            edu<span>vate</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="../index.html">
+                Home
+            </a>
+
+            <a href="index.html" class="active">
+                Virtual Lab
+            </a>
+
+            <a href="../assessment/index.html">
+                Assessment
+            </a>
+
+            <a href="../dashboard/index.html">
+                Dashboard
+            </a>
+
+        </nav>
+
+
+        <div class="student-profile">
+
+            <div class="student-avatar">
+                👤
+            </div>
+
+            <span>
+                Student
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main>
+
+
+        <!-- ================= HERO ================= -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <span class="welcome-badge">
+                    🧪 INTERACTIVE LEARNING
+                </span>
+
+
+                <h1>
+                    Learn by
+                    <span>doing.</span>
+                </h1>
+
+
+                <p>
+                    Welcome to the EDUVATE Virtual Lab.
+                    Experiment, visualize concepts and
+                    learn through hands-on activities.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <button
+                        id="continueButton"
+                        class="primary-button"
+                    >
+                        Continue Learning →
+                    </button>
+
+
+                    <button
+                        id="randomLabButton"
+                        class="secondary-button"
+                    >
+                        🎲 Surprise Me
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Hero visual -->
+
+            <div class="hero-visual">
+
+                <div class="visual-circle circle-one"></div>
+
+                <div class="visual-circle circle-two"></div>
+
+
+                <div class="algorithm-card">
+
+                    <div class="algorithm-top">
+
+                        <span>
+                            LIVE LAB
+                        </span>
+
+                        <span class="live-dot">
+                            ●
+                        </span>
+
+                    </div>
+
+
+                    <div class="mini-array">
+
+                        <span>8</span>
+                        <span>3</span>
+                        <span>5</span>
+                        <span>1</span>
+                        <span>7</span>
+
+                    </div>
+
+
+                    <div class="visual-text">
+
+                        <strong id="heroLabName">
+                            Bubble Sort
+                        </strong>
+
+                        <small id="heroLabText">
+                            Comparing elements...
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= PROGRESS ================= -->
+
+        <section class="progress-section">
+
+            <div class="progress-card">
+
+                <div class="progress-info">
+
+                    <div>
+
+                        <span class="small-label">
+                            YOUR LEARNING JOURNEY
+                        </span>
+
+                        <h2>
+                            Virtual Lab Progress
+                        </h2>
+
+                    </div>
+
+
+                    <strong id="overallPercentage">
+                        0%
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-track">
+
+                    <div
+                        id="overallProgress"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+
+                <p id="progressMessage">
+                    Start your first experiment
+                    to begin your journey.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= LABS ================= -->
+
+        <section class="labs-section" id="labs">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="small-label">
+                        EXPLORE THE LAB
+                    </span>
+
+                    <h2>
+                        Choose an experiment
+                    </h2>
+
+                    <p>
+                        Select a subject and start learning.
+                    </p>
+
+                </div>
+
+
+                <span class="lab-count">
+                    7 Labs
+                </span>
+
+            </div>
+
+
+
+            <!-- ================= COMPUTER SCIENCE ================= -->
+
+            <div class="category-heading">
+
+                <div class="category-icon">
+                    🧠
+                </div>
+
+                <div>
+                    <h3>
+                        Computer Science
+                    </h3>
+
+                    <p>
+                        Algorithms & problem solving
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="lab-grid">
+
+
+                <!-- BUBBLE SORT -->
+
+                <article
+                    class="lab-card"
+                    data-lab="bubbleSort"
+                    data-category="computer"
+                >
+
+                    <div class="card-top">
+
+                        <div class="lab-icon purple">
+                            🔄
+                        </div>
+
+                        <span class="difficulty beginner">
+                            BEGINNER
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Bubble Sort
+                    </h3>
+
+                    <p>
+                        Visualize neighbouring elements
+                        being compared and swapped.
+                    </p>
+
+
+                    <div class="array-preview">
+
+                        <span>8</span>
+                        <span>3</span>
+                        <span>5</span>
+                        <span>1</span>
+                        <span>7</span>
+
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="lab-status">
+
+                            <span
+                                id="bubbleStatus"
+                                class="status-dot"
+                            ></span>
+
+                            <span id="bubbleStatusText">
+                                Not started
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="COMPUTER SCIENCE/bubble-sort/index.html"
+                            class="lab-button"
+                        >
+                            Open Lab →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- LINEAR SEARCH -->
+
+                <article
+                    class="lab-card"
+                    data-lab="linearSearch"
+                    data-category="computer"
+                >
+
+                    <div class="card-top">
+
+                        <div class="lab-icon blue">
+                            🔎
+                        </div>
+
+                        <span class="difficulty beginner">
+                            BEGINNER
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Linear Search
+                    </h3>
+
+                    <p>
+                        Search through an array one element
+                        at a time and find the target.
+                    </p>
+
+
+                    <div class="array-preview">
+
+                        <span>4</span>
+                        <span>9</span>
+                        <span class="target">2</span>
+                        <span>7</span>
+                        <span>6</span>
+
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="lab-status">
+
+                            <span
+                                id="linearStatus"
+                                class="status-dot"
+                            ></span>
+
+                            <span id="linearStatusText">
+                                Not started
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="COMPUTER SCIENCE/linear-search/index.html"
+                            class="lab-button"
+                        >
+                            Open Lab →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- BINARY SEARCH -->
+
+                <article
+                    class="lab-card"
+                    data-lab="binarySearch"
+                    data-category="computer"
+                >
+
+                    <div class="card-top">
+
+                        <div class="lab-icon green">
+                            🎯
+                        </div>
+
+                        <span class="difficulty intermediate">
+                            INTERMEDIATE
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Binary Search
+                    </h3>
+
+                    <p>
+                        Discover how dividing a sorted array
+                        makes searching much faster.
+                    </p>
+
+
+                    <div class="array-preview">
+
+                        <span>2</span>
+                        <span>5</span>
+                        <span>8</span>
+                        <span class="target">12</span>
+                        <span>17</span>
+
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="lab-status">
+
+                            <span
+                                id="binaryStatus"
+                                class="status-dot"
+                            ></span>
+
+                            <span id="binaryStatusText">
+                                Not started
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="COMPUTER SCIENCE/binary-search/index.html"
+                            class="lab-button"
+                        >
+                            Open Lab →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+
+            <!-- ================= SCIENCE ================= -->
+
+            <div class="category-heading">
+
+                <div class="category-icon">
+                    🔬
+                </div>
+
+                <div>
+                    <h3>
+                        Science
+                    </h3>
+
+                    <p>
+                        Explore concepts through virtual experiments
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="lab-grid">
+
+
+                <!-- BIOLOGY -->
+
+                <article
+                    class="lab-card"
+                    data-lab="biologyLab"
+                    data-category="science"
+                >
+
+                    <div class="card-top">
+
+                        <div class="lab-icon green">
+                            🧬
+                        </div>
+
+                        <span class="difficulty beginner">
+                            BEGINNER
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Biology Lab
+                    </h3>
+
+
+                    <p>
+                        Explore biological concepts through
+                        interactive virtual experiments.
+                    </p>
+
+
+                    <div class="science-preview">
+                        🧬 🧫 🔬
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="lab-status">
+
+                            <span
+                                id="biologyStatus"
+                                class="status-dot"
+                            ></span>
+
+                            <span id="biologyStatusText">
+                                Not started
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="SCIENCE/biology-lab/index.html"
+                            class="lab-button"
+                        >
+                            Open Lab →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- CHEMISTRY -->
+
+                <article
+                    class="lab-card"
+                    data-lab="chemistryLab"
+                    data-category="science"
+                >
+
+                    <div class="card-top">
+
+                        <div class="lab-icon pink">
+                            🧪
+                        </div>
+
+                        <span class="difficulty beginner">
+                            BEGINNER
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Chemistry Lab
+                    </h3>
+
+
+                    <p>
+                        Mix chemicals and observe acid-base
+                        neutralization and pH changes.
+                    </p>
+
+
+                    <div class="science-preview">
+                        ⚗️ 🧪 🧫
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="lab-status">
+
+                            <span
+                                id="chemistryStatus"
+                                class="status-dot"
+                            ></span>
+
+                            <span id="chemistryStatusText">
+                                Not started
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="SCIENCE/chemistry-lab/index.html"
+                            class="lab-button"
+                        >
+                            Open Lab →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- PHYSICS -->
+
+                <article
+                    class="lab-card"
+                    data-lab="physicsLab"
+                    data-category="science"
+                >
+
+                    <div class="card-top">
+
+                        <div class="lab-icon purple">
+                            ⚡
+                        </div>
+
+                        <span class="difficulty intermediate">
+                            INTERMEDIATE
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Physics Lab
+                    </h3>
+
+
+                    <p>
+                        Experiment with physics concepts
+                        using interactive simulations.
+                    </p>
+
+
+                    <div class="science-preview">
+                        ⚡ 🔋 💡
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="lab-status">
+
+                            <span
+                                id="physicsStatus"
+                                class="status-dot"
+                            ></span>
+
+                            <span id="physicsStatusText">
+                                Not started
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="SCIENCE/physics-lab/index.html"
+                            class="lab-button"
+                        >
+                            Open Lab →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+
+            <!-- ================= ELECTRONICS ================= -->
+
+            <div class="category-heading">
+
+                <div class="category-icon">
+                    ⚡
+                </div>
+
+                <div>
+                    <h3>
+                        Electronics
+                    </h3>
+
+                    <p>
+                        Build and understand electrical circuits
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="lab-grid single-lab">
+
+
+                <!-- CIRCUIT LAB -->
+
+                <article
+                    class="lab-card"
+                    data-lab="circuitLab"
+                    data-category="electronics"
+                >
+
+                    <div class="card-top">
+
+                        <div class="lab-icon orange">
+                            🔌
+                        </div>
+
+                        <span class="difficulty intermediate">
+                            INTERMEDIATE
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Circuit Connection Lab
+                    </h3>
+
+
+                    <p>
+                        Drag and connect circuit components
+                        and build a working electrical circuit.
+                    </p>
+
+
+                    <div class="circuit-preview">
+
+                        🔋
+                        <span>━━</span>
+                        💡
+                        <span>━━</span>
+                        🔌
+
+                    </div>
+
+
+                    <div class="card-footer">
+
+                        <div class="lab-status">
+
+                            <span
+                                id="circuitStatus"
+                                class="status-dot"
+                            ></span>
+
+                            <span id="circuitStatusText">
+                                Not started
+                            </span>
+
+                        </div>
+
+
+                        <a
+                            href="ELECTRONICS/circuit-lab/index.html"
+                            class="lab-button"
+                        >
+                            Open Lab →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= TIP ================= -->
+
+        <section class="learning-tip">
+
+            <div class="tip-icon">
+                💡
+            </div>
+
+
+            <div>
+
+                <span class="small-label">
+                    EDUVATE TIP
+                </span>
+
+                <h3>
+                    Don't just watch. Experiment.
+                </h3>
+
+                <p>
+                    Try different inputs, make mistakes and
+                    observe what changes. Understanding comes
+                    from experimenting.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= FOOTER ================= -->
+
+        <footer>
+
+            <div class="footer-logo">
+                edu<span>vate</span>
+            </div>
+
+            <p>
+                Learn. Experiment. Grow. 🚀
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <script src="progress.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
